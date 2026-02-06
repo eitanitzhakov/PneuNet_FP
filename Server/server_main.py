@@ -9,6 +9,9 @@ if current_dir not in sys.path:
 from server import Server
 
 if __name__ == "__main__":
+    import cipher
+
+    print("Loading cipher from:", cipher.__file__)
     print("[INIT] Starting PneuNet Server...")
 
     # הגדרות הרצה - אפשר לשנות כאן את הנתיב למשקלים (weights)

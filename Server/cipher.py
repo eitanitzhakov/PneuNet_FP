@@ -8,7 +8,7 @@ class Cipher:
         self.nonce = nonce
 
     def aes_encrypt(self, txt):
-        cipher = AES.new(self.key, AES.MODE_EAX,  nonce=self.nonce)
+        cipher = AES.new(self.key, AES.MODE_EAX, nonce=self.nonce)
         ciphertext, tag = cipher.encrypt_and_digest(txt)
         return ciphertext
 
@@ -24,9 +24,6 @@ class Cipher:
         return dh, pk
 
     @staticmethod
-    def get_dh_shared_key(dh_1, pk_2, length=32):
+    def get_dh_shared_key(dh_1, pk_2, lngth=32):  # <--- וודא שכתוב כאן lngth=32
         dh_shared = dh_1.generate_shared_key(pk_2)
-        return dh_shared[:length]
-
-
-
+        return dh_shared[:lngth]

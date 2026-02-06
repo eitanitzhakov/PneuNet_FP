@@ -414,12 +414,13 @@ class AuthWindow(QWidget):
         layout.addWidget(title)
         layout.addSpacing(20)
 
-        self.reg_name = QLineEdit(placeholderText="Full Name (Username)")
-        self.reg_email = QLineEdit(placeholderText="Email (Optional)")
+        # שינוי: מחקנו את self.reg_email
+        self.reg_name = QLineEdit(placeholderText="Username")
         self.reg_pass = QLineEdit(placeholderText="Password")
         self.reg_pass.setEchoMode(QLineEdit.EchoMode.Password)
 
-        for le in [self.reg_name, self.reg_email, self.reg_pass]:
+        # שינוי: הלולאה עוברת רק על שני השדות שנותרו
+        for le in [self.reg_name, self.reg_pass]:
             le.setStyleSheet("border: none; border-bottom: 2px solid #ccc; padding: 8px; font-size: 14px;")
             layout.addWidget(le)
 
@@ -584,6 +585,10 @@ class AuthWindow(QWidget):
     def handle_signup_click(self):
         name = self.reg_name.text().strip()
         password = self.reg_pass.text().strip()
+
+        if not name or not password:
+            QMessageBox.warning(self, "Error", "Please fill all signup fields.")
+            return
 
         self.btn_signup.setEnabled(False)
         self.btn_signup.setText("Registering...")
