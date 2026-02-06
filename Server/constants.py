@@ -1,0 +1,1 @@
+NONCE = b"Encryption is the process of transforming information into a form that is unreadable"
