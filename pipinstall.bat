@@ -1,0 +1,13 @@
+pip install pyyaml==6.0.3
+pip install safetensors==0.7.0
+pip install setuptools==82.0.0
+pip install shellingham==1.5.4
+pip install shiboken6==6.10.2
+pip install sympy==1.14.0
+pip install timm==1.0.25
+pip install torch==2.1.0
+pip install torchvision==0.25.0
+pip install tqdm==4.67.3
+pip install typer-slim==0.24.0
+pip install typing-extensions==4.15.0
+pip install zxcvbn==4.5.0
